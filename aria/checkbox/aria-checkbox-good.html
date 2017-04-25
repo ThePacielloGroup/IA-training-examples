@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+    <title>ARIA Checkbox Example - Good</title>
+    
+    <script>
+        function trapSpaceKey(t,e){
+          if ( e.which == 32 ) {
+              toggleCheckBox(t);
+          }
+      }
+
+      function toggleCheckBox(t) {
+          if(t.getAttribute("aria-checked")=="false") {
+            t.style.backgroundImage = "url('checkbox-checked.png')";
+            t.setAttribute("aria-checked","true");
+        } else {
+            t.style.backgroundImage = "url('checkbox-unchecked.png')";
+            t.setAttribute("aria-checked","false"); 
+        }
+        t.focus();
+    }
+</script>
+</head>
+<body>
+<h1>ARIA Checkbox Example - Good</h1>
+    <p><a href="#">filler link</a></p>
+    <div role="checkbox" aria-checked="false" style="background-image: url('checkbox-unchecked.png');background-repeat: no-repeat;padding-left:25px;" onclick="toggleCheckBox(this);" onkeypress="trapSpaceKey(this,event);" tabindex="0">Sign me up!</div>
+    <p><a href="#">filler link</a></p>
+
+</body>
+</html>
