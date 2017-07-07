@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width">
+  <title>Relative vs Absolute Text Size for Resizing Text</title>
+
+<style id="jsbin-css">
+body {
+  background-color:White;
+  font-size:100%;
+}
+
+div.absolute {
+  width: 480px;
+  height:240px;
+  border: 2px solid black;
+}
+
+div.absolute div.content {
+  font-size: 20px;
+}
+
+div.absolute div.content h1 {
+  font-size: 25px;
+}
+
+div.relative {
+  width: 30em;
+  height:15em;
+  border: 2px solid black;
+}
+
+div.relative div.content {
+  font-size: 1.25em; /* 16px × 1.25 = 20px */
+
+}
+
+div.relative div.content h1 {
+  font-size: 1.25em; /* 16px × 1.25 × 1.25 = 25px */
+}
+</style>
+</head>
+<body>
+  <h1>Relative vs Absolute Text Text Size for Resizing Text</h1>
+  <p>The following page should be viewed in a browser that allows the user to resize only the text and not magnify the entire page (e.g., Firefox [View -> Zoom-> Zoom Text Only]).</p>
+  <p>If the entire page can be magnified with no content obscured using the full page zoom feature of web browsers then in meets WCAG 2.0 AA Success Criteria 1.4.4.</p>
+  <p>This is simply an example of the benefits of using relative units.</p>
+  <h2>Absolute Text Size</h2>
+  <div class="absolute">
+    <div class="content">
+      <h1>Level One Heading</h1>
+      <p>The contens of this container are sized using <strong>absolute</strong> units with a text font size of 20px and a H1 font size of 25px;. The container has an absolute width of 480px and a height of 240px.</p>
+    </div>
+  </div>
+  <h2>Relative Text Size</h2>
+  <div class="relative">
+    <div class="content">
+      <h1>Level One Heading</h1>
+      <p>The contens of this container are sized using <strong>relative</strong> units with a text font size of 1.25em which equals 20px and a H1 font size of 1.25em which equals 25px;. The container has a relative width of 30em (480px) and a height of 15em (240px).</p>
+    </div>
+  </div>
+</body>
+</html>
