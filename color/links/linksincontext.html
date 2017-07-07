@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width">
+  <title>Identifiable Links in Context with Color Contrast</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".clear").click(function(){
+           $("div.question").remove();
+           $("a").removeClass("highlight");
+           $("p.answer").html("");
+       }); 
+      $(".links").click(function(){
+           $("div.question").remove();
+           $("a").removeClass("highlight");
+           $("p.answer").html("");
+           $("body").prepend("<div class='question'><p style='font-size:120%; Font-weight:bold;margin:0 auto; width:15.5em;'>How Many Links Are In This Text?</p><p style='margin: 0 auto;width:9.8em;margin-top:1em;'><button class='linksa'>Show Answer</button></p></div>");
+       });
+      $("body").delegate(".linksa", 'click', function(){
+           $("div.question").remove();
+           $("a").addClass("highlight");
+           $("p.answer").html("6 Links");
+       });
+      $(".context").click(function(){
+           $("div.question").remove();
+           $("a").removeClass("highlight");
+           $("p.answer").html("");
+           $("body").prepend("<div class='question'><p style='font-size:120%; Font-weight:bold;margin:0 auto; width:15.5em;'>But how many are distinguishable from the surrounding text (according to WCAG 2)?</p><p style='margin: 0 auto;width:9.8em;margin-top:1em;'><button class='contexta'>Show Answer</button></p></div>");
+       });
+      $("body").delegate(".contexta", 'click', function(){
+           $("div.question").remove();
+           $("a.red, a.greyunder, a.darkgrey").addClass("highlight");
+           $("p.answer").html("3 Links<br/>have enough contrast difference");
+       })
+       $(".contrast").click(function(){
+           $("div.question").remove();
+           $("a").removeClass("highlight");
+           $("p.answer").html("");
+           $("body").prepend("<div class='question'><p style='font-size:120%; Font-weight:bold;margin:0 auto; width:15.5em;'>But how many have enough contrast with the white background?</p><p style='margin: 0 auto;width:9.8em;margin-top:1em;'><button class='contrasta'>Show Answer</button></p></div>");
+       });
+      $("body").delegate(".contrasta", 'click', function(){
+           $("div.question").remove();
+           $("a.blue, a.greyunder,a.darkgrey, a.darkergrey, a.greydash").addClass("highlight");
+           $("p.answer").html("5 Links");
+       })
+       $(".combine").click(function(){
+           $("div.question").remove();
+           $("a").removeClass("highlight");
+           $("p.answer").html("");
+         $("body").prepend("<div class='question'><p style='font-size:120%; Font-weight:bold;margin:0 auto; width:15.5em;'>Putting the two tests together, how many have valid color combinations?</p><p style='margin: 0 auto;width:9.8em;margin-top:1em;'><button class='combinea'>Show Answer</button></p></div>");
+       });
+      $("body").delegate(".combinea", 'click', function(){
+           $("div.question").remove();
+           $("a.greyunder,a.darkgrey").addClass("highlight");
+           $("p.answer").html("2 Links");
+       })
+    });
+  </script>
+
+<style id="jsbin-css">
+body {background-color: White;position: relative;}
+
+a.greydash, a.greydash:visited, a.greydash:active{
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 3px grey dashed;
+}
+
+a.darkergrey, a.darkergrey:visited, a.darkergrey:active{
+  color: #555555;
+  text-decoration: none;
+}
+
+a.darkgrey, a.darkgrey:visited, a.darkgrey:active{
+  color: #666666;
+  text-decoration: none;
+}
+
+a.red, a.red:visited, a.red:active{
+  color: #BE0000;
+  text-decoration: none;
+}
+
+a.greyunder, a.greyunder:visited, a.greyunder:active{
+  color: #616161;
+  text-decoration: underline;
+}
+
+a.blue, a.blue:visited, a.blue:active{
+  color: #0000FF;
+  text-decoration: none;
+}
+
+button {margin-right: 1em; font-size: 120%; margin-bottom:1em;}
+
+a.highlight {border: 5px solid red;}
+
+div.text p {
+  margin: 0 auto;
+  width: 60%; 
+  margin-top:2em;
+  line-height:1.9em;
+}
+
+div.text p.answer {
+  width:20%;
+  font-size: 180%;
+}
+
+div.question {
+  width: 20em;
+  Height:7em;
+  position:absolute;
+  top: 110%;
+  left:50%;
+  z-index: 100000;
+  border: 2px solid black;
+  margin-left:-10em;
+  margin-top:-1em;
+  padding:2em;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+  background-color:White;
+}
+</style>
+</head>
+<body>
+<h1>Identifiable Links in Context with Color Contrast</h1>
+  <div class="text">
+     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacus lacus, <a href="#" class="greydash">vulputate</a> in dictum vestibulum, consectetur id nisi. Morbi lorem mauris, laoreet non sagittis nec, posuere nec erat. Mauris <a href="#" class="darkergrey">semper</a> purus in pharetra suscipit. Orci <a href="#" class="red">varius</a> natoque penatibus et magnis dis parturient montes, nascetur <a href="#" class="darkgrey">ridiculus</a> mus. Duis ultricies posuere nulla sit amet pulvinar. Curabitur eleifend facilisis est a sodales. Morbi gravida luctus dui. Aliquam <a href="#" class="greyunder">ornare</a> malesuada aliquam. Nulla bibendum justo est, sed volutpat nisl ultricies vel. Donec dapibus <a href="#" class="blue">bibendum</a> massa, quis finibus justo mattis ut. Fusce sed tortor vel enim commodo porta. </p>
+     <p class="buttons"><button class="links">Links?</button><button class="context">Links Distinguishable from Text?</button><button class="contrast">Links Against Background?</button><button class="combine">Links that Meet Both?</button><button class="clear">Clear All</button></p>
+     <p class="answer"></p>
+  </div>
+</body>
+</html>
