@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Hiding Icon Fonts with aria-label - Informational Image Example - Images - IA Training Examples</title>
+  <script src="https://use.fontawesome.com/e436db78fe.js"></script>
+  <style>
+    body {
+      background-color:#DFDEDA;
+    }
+    .fa-print:before, span {
+      font-size: 90pt;
+      color: #747168;
+      padding: .5em;
+      display: block;
+    }
+    .visually-hidden {
+      position: absolute;
+      clip: rect(1px 1px 1px 1px);  /* for Internet Explorer */
+      clip: rect(1px, 1px, 1px, 1px);
+      padding: 0;
+      border: 0;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+   }
+  </style>
+</head>
+<body>
+  <h1>Informational Image Example - Hiding Icon Fonts with <code>aria-label</code></h1>
+  <a href="../icon/print" aria-label="Print">
+     <i class="fa fa-print"></i>
+     <span class="visually-hidden">
+       Print
+     </span>
+  </a>
+</body>
+</html>
