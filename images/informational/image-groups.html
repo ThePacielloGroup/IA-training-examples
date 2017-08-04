@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Image Groups - Informational Image Example - Images - IA Training Examples</title>
+  <style>
+    div {
+      float: left;
+    }
+    img {
+      float:left;
+    }
+    ul {
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+    ul li {
+      display: inline;
+    }
+    a, a:visited, a:active {
+      color: #990000;
+      text-decoration:none;
+      border-right: 2px solid black;
+      padding: 0 .2em;
+    }
+    
+    li.last a {
+      border-right:none;
+    }
+    div#image-group{
+      width:12.5em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Informational Image Example - Image Groups</h1>
+  <h2 id="product">Acorn 'Chinchilla' Slipper</h2>
+  <div id="image-group">
+    <img src="star-full.jpg"  alt="4 out of 5 stars">
+    <img src="star-full.jpg"  alt="">
+    <img src="star-full.jpg"  alt="">
+    <img src="star-full.jpg"  alt="">
+    <img src="star-empty.jpg" alt="">
+  </div>
+  <div>
+    <ul>
+      <li><a href="#" aria-describedby="product">5 reviews</a></li>
+      <li><a href="#" aria-describedby="product">write a review</a></li>
+      <li class="last"><a href="#" aria-describedby="product">discuss this item</a></li>
+    </ul>
+  </div>
+</body>
+</html>
