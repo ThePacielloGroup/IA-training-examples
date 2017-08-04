@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Label Other Content - Informational Image Example - Images - IA Training Examples</title>
+  <style>
+    .arrow-right:after {
+  content:'';
+  position absolute;
+  width: 0; 
+  height: 0; 
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;  
+  border-left: 5px solid #1E4774;
+  display: inline-block;
+  margin-left:.3em
+}
+p, li {
+  position: relative;
+}
+
+ul {
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+
+li {
+  padding-bottom: 1em;
+}
+
+img {
+  float:left;
+  height:1.5em;
+  margin-right:.7em;
+}
+div {
+  border: 2px solid #D0D0D0;
+  padding: 1em;
+  width: 18em;
+  color: #6E6E6E;
+  font-family: Arial;
+  font-weight:bold;
+  font-size:120%;
+  padding-right:.5em;
+}
+h2, p {
+  padding:0;
+  margin:0;
+}
+
+li.arrow-right, p.arrow-right {
+  color: #1E4774;
+}
+input {
+  margin-top:.5em;
+  font-weight: bold;
+  font-family: Arial;
+  padding:.4em;
+  font-size:12pt;
+}
+h2 {
+  font-size:120%;
+  margin-bottom:1em;
+}
+button {
+  color: White;
+  font-weight: bold;
+  font-family: Arial;
+  padding:.4em;
+  margin-left:.2em;
+  font-size:14pt;
+  border-radius: 5px;
+  border:none;
+  background: #707F8A; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#B0C0CB, #707F8A); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#B0C0CB, #707F8A); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#B0C0CB, #707F8A); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#B0C0CB, #707F8A); /* Standard syntax */
+}
+img#email {
+  -ms-transform: rotate(-45deg); /* IE 9 */
+  -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+  transform: rotate(-45deg);
+  height:1.2em;
+}
+img#location {
+  height:2em;
+}
+  </style>
+</head>
+<body>
+  <h1>Informational Image Example - Images Used to Label other content</h1>
+  <div>
+    <h2>Talk to a Business Banker</h2>
+  <ul>
+<li><img src="phone.png" alt="Phone:" id="phone"> 1-800-448-2265</li>
+<li class="arrow-right"><img src="email.png" alt="Email:" id="email"> Have a banker Contact me</li>
+<li>
+  <img src="location.png" alt="Location:" id="location">Find a branch
+  <form>
+    <input type="text" placeholder="Enter Zip, City or State" aria-label="Find a branch (Enter Zip, City or State)"/><button type="submit">Find</button>
+  </form>
+</li>
+</ul>
+    <p class="arrow-right">What you'll need to open an account</p>
+  </div>
+</body>
+</html>
