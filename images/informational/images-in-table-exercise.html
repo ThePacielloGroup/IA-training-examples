@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Images in Table - Informational Image Class Exercise - Images - IA Training Examples</title>
+  <style>
+    table {
+      font-family: Arial;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: thin solid #D0D0D0;
+    }
+    th, td {
+      padding: .3em;
+      width: 8em;
+    }
+    th {
+      text-align: left;
+      vertical-align: top;
+    }
+    td {
+      text-align: center;
+    }
+    tr.colhead th {
+      text-align: center;
+      vertical-align: middle;
+    }
+    .visually-hidden
+    {
+      position: absolute;
+      clip: rect(1px 1px 1px 1px);  /* for Internet Explorer */
+      clip: rect(1px, 1px, 1px, 1px);
+      padding: 0;
+      border: 0;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+   }
+   img
+    {
+      width:2.25em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Informational Image Class Exercise - Images in Table</h1>
+  <table>
+    <tr class="colhead">
+      <th scope="col"><span class="visually-hidden">Feature Category</span></th>
+      <th scope="col">Silver Plan</th>
+      <th scope="col">Gold Plan</th>
+    </tr>
+    <tr>
+      <th scope="row">Disk Space</th>
+      <td>100GB</td>
+      <td>250GB</td>
+    </tr>
+    <tr>
+      <th scope="row">Daily Backups</th>
+      <td><img src="green-check.png" alt="included" /></td>
+      <td><img src="green-check.png" alt="included" /></td>
+    </tr>
+    <tr>
+      <th scope="row">SSL Available</th>
+      <td><img src="red-x.png" alt="not included" /></td>
+      <td><img src="green-check.png" alt="included" /></td>
+    </tr>
+  </table>
+</body>
+</html>
