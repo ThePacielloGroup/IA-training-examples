@@ -25,7 +25,7 @@
 <body>
   <h1>Decorative Image Example - Ignoring Images</h1>
   <p>Below are the 4 different ways developers can make sure decorative images are ignored by assistive technology</p>
-  <ol style="list-style:none;">
+  <ol>
      <li>
         <h2>CSS</h2>
         <div style="width:350px; height:250px;background-image:url('bg.gif');">
@@ -44,7 +44,7 @@
      </li>
      <li class="group">
         <h2><code>aria-hidden="true"</code></h2>
-        <div class="container">
+        <div class="container" style="width:350px;">
         <img src="bg.gif" aria-hidden="true" />
            <div class="centered">
               <p style="font-size:150%; font-weight:bold;">Hello World! #3</p>
@@ -53,7 +53,7 @@
      </li>
      <li class="group">
         <h2><code>role="presentation"</code></h2>
-        <div class="container">
+        <div class="container" style="width:350px;">
         <img src="bg.gif" role="presentation" />
            <div class="centered">
               <p style="font-size:150%; font-weight:bold;">Hello World! #4</p>
