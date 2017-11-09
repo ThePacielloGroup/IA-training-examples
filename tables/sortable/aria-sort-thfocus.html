@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+  <title>ARIA sort for sortable tables test (th active element) - November 2017</title>
+  <script>
+    $(document).ready(function(){
+    $("#date").parents("th").click(function (){
+      if ($("#date").parents("th").attr("aria-sort") == "ascending") {
+        $("#date").parents("th").attr("aria-sort","descending");
+        $("#date").parents("th").removeClass("ascending").addClass("descending");
+        $("table tr:nth-child(2)").html("<td>14 April</td><td>The What</td><td>Main Hall</td>");
+        $("table tr:nth-child(3)").html("<td>24 March</td><td>The Obelisks</td><td>West Wing</td>");
+        $("table tr:nth-child(4)").html("<td>12 February</td><td>Waltz with Strauss</td><td>Main Hall</td>");
+      }
+      else if ($("#date").parents("th").attr("aria-sort") == "descending") {
+        $("#date").parents("th").attr("aria-sort","ascending");
+        $("#date").parents("th").removeClass("descending").addClass("ascending");
+        $("table tr:nth-child(4)").html("<td>14 April</td><td>The What</td><td>Main Hall</td>");
+        $("table tr:nth-child(3)").html("<td>24 March</td><td>The Obelisks</td><td>West Wing</td>");
+        $("table tr:nth-child(2)").html("<td>12 February</td><td>Waltz with Strauss</td><td>Main Hall</td>");
+      }
+      else {
+        $("#date").parents("th").attr("aria-sort","ascending");
+        $("#date").parents("th").addClass("ascending");
+        $("table tr:nth-child(4)").html("<td>14 April</td><td>The What</td><td>Main Hall</td>");
+        $("table tr:nth-child(3)").html("<td>24 March</td><td>The Obelisks</td><td>West Wing</td>");
+        $("table tr:nth-child(2)").html("<td>12 February</td><td>Waltz with Strauss</td><td>Main Hall</td>");
+      }
+      $("#event, #venue").parents("th").attr("aria-sort","none");
+      $("#event, #venue").parents("th").removeClass("ascending").removeClass("descending");
+    });
+    $("#event").parents("th").click(function (){
+      if ($("#event").parents("th").attr("aria-sort") == "ascending") {
+        $("#event").parents("th").attr("aria-sort","descending");
+        $("#event").parents("th").removeClass("ascending").addClass("descending");
+        $("table tr:nth-child(2)").html("<td>14 April</td><td>The What</td><td>Main Hall</td>");
+        $("table tr:nth-child(4)").html("<td>24 March</td><td>The Obelisks</td><td>West Wing</td>");
+        $("table tr:nth-child(3)").html("<td>12 February</td><td>Waltz with Strauss</td><td>Main Hall</td>");
+      }
+      else if ($("#event").parents("th").attr("aria-sort") == "descending") {
+        $("#event").parents("th").attr("aria-sort","ascending");
+        $("#event").parents("th").removeClass("descending").addClass("ascending");
+        $("table tr:nth-child(4)").html("<td>14 April</td><td>The What</td><td>Main Hall</td>");
+        $("table tr:nth-child(2)").html("<td>24 March</td><td>The Obelisks</td><td>West Wing</td>");
+        $("table tr:nth-child(3)").html("<td>12 February</td><td>Waltz with Strauss</td><td>Main Hall</td>");
+      }
+      else {
+        $("#event").parents("th").attr("aria-sort","ascending");
+        $("#event").parents("th").addClass("ascending");
+        $("table tr:nth-child(4)").html("<td>14 April</td><td>The What</td><td>Main Hall</td>");
+        $("table tr:nth-child(2)").html("<td>24 March</td><td>The Obelisks</td><td>West Wing</td>");
+        $("table tr:nth-child(3)").html("<td>12 February</td><td>Waltz with Strauss</td><td>Main Hall</td>");
+      }
+      $("#date, #venue").parents("th").attr("aria-sort","none");
+      $("#date, #venue").parents("th").removeClass("ascending").removeClass("descending");
+    });
+    $("#venue").parents("th").click(function (){
+      if ($("#venue").parents("th").attr("aria-sort") == "ascending") {
+        $("#venue").parents("th").attr("aria-sort","descending");
+        $("#venue").parents("th").removeClass("ascending").addClass("descending");
+        $("table tr:nth-child(3)").html("<td>14 April</td><td>The What</td><td>Main Hall</td>");
+        $("table tr:nth-child(2)").html("<td>24 March</td><td>The Obelisks</td><td>West Wing</td>");
+        $("table tr:nth-child(4)").html("<td>12 February</td><td>Waltz with Strauss</td><td>Main Hall</td>");
+      }
+      else if ($("#venue").parents("th").attr("aria-sort") == "descending") {
+        $("#venue").parents("th").attr("aria-sort","ascending");
+        $("#venue").parents("th").removeClass("descending").addClass("ascending");
+        $("table tr:nth-child(3)").html("<td>14 April</td><td>The What</td><td>Main Hall</td>");
+        $("table tr:nth-child(4)").html("<td>24 March</td><td>The Obelisks</td><td>West Wing</td>");
+        $("table tr:nth-child(2)").html("<td>12 February</td><td>Waltz with Strauss</td><td>Main Hall</td>");
+      }
+      else {
+        $("#venue").parents("th").attr("aria-sort","ascending");
+        $("#venue").parents("th").addClass("ascending");
+        $("table tr:nth-child(3)").html("<td>14 April</td><td>The What</td><td>Main Hall</td>");
+        $("table tr:nth-child(4)").html("<td>24 March</td><td>The Obelisks</td><td>West Wing</td>");
+        $("table tr:nth-child(2)").html("<td>12 February</td><td>Waltz with Strauss</td><td>Main Hall</td>");
+      }
+      $("#date, #event").parents("th").attr("aria-sort","none");
+      $("#date, #event").parents("th").removeClass("ascending").removeClass("descending");
+    });
+    });
+  </script>
+  <style>
+    th, td {
+      text-align: left;
+      padding:.5rem;
+    }
+    th {
+      font-weight: 900;
+      font-size:19pt;
+      background: url("http://downloadicons.net/sites/default/files/sort-of-a-triangle-icon-81779.png") no-repeat right;
+      background-size: 40px 40px;
+      background-color:#ccc;
+    }
+    th.ascending {
+      background: url("http://www.free-icons-download.net/images/sort-of-a-triangle-icon-76160.png") no-repeat right;
+      background-size: 30px 30px;
+      background-color:#ccc;
+    }
+    th.descending {
+      background:url("http://www.free-icons-download.net/images/sort-of-a-triangle-icon-76163.png") no-repeat right;
+      background-size: 30px 30px;
+      background-color:#ccc;
+    }
+    td {
+      background-color:#eee;
+
+    }
+    table {
+      border-collapse: collapse;
+      font-size:18pt;
+      font-family: trebuchet ms;
+    }
+    table, th, td {
+    border: .15rem solid #888;     
+    }
+    th a, th a:active {
+      text-decoration:none;
+      color:black;
+    }
+    th a:hover, th a:focus {
+      text-decoration:underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>ARIA sort for sortable tables test (th active element) - November 2017</h1>
+  <table>
+  <tr>
+    <th scope="col" aria-sort="ascending" class="ascending" tabindex="0">
+      <div id="date">Date</div>
+    </th>
+    <th scope="col" aria-sort="none" id="event" tabindex="0">
+      <div id="event">Event</div>
+    </th>
+    <th scope="col" aria-sort="none"id="venue" tabindex="0">
+      <div id="venue">Venue</div>
+    </th>
+    </tr>
+    <tr>
+      <td>12 February</td>
+      <td>Waltz with Strauss</td>
+      <td>Main Hall</td>
+    </tr>
+    <tr>
+      <td>24 March</td>
+      <td>The Obelisks</td>
+      <td>West Wing</td>
+    </tr>
+    <tr>
+      <td>14 April</td>
+      <td>The What</td>
+      <td>Main Hall</td>
+    </tr>
+</table>
+</body>
+</html>
